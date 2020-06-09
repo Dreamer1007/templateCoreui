@@ -9,7 +9,11 @@ var spinner;
 
 var _workstart = function() { spinner = new Spinner().spin(_target); }
 var _workend = function() { spinner.stop(); }
+<<<<<<< HEAD
 ;
+=======
+
+>>>>>>> 07650f706c79689b4b0d8728945c93a9fa2636de
 /** Alerts **/
 var _badfile = function() {
   alertify.alert('This file does not appear to be a valid Excel file.  If we made a mistake, please send this file to <a href="mailto:dev@sheetjs.com?subject=I+broke+your+stuff">dev@sheetjs.com</a> so we can take a look.', function(){});
@@ -47,8 +51,13 @@ var make_buttons = function(sheetnames, cb) {
 var cdg = canvasDatagrid({
   parentNode: _grid
 });
+<<<<<<< HEAD
 cdg.style.height = '85%';
 cdg.style.width = '80%';
+=======
+cdg.style.height = '100%';
+cdg.style.width = '100%';
+>>>>>>> 07650f706c79689b4b0d8728945c93a9fa2636de
 
 function _resize() {
   _grid.style.height = (window.innerHeight - 200) + "px";
@@ -127,4 +136,9 @@ $(document).ready( function(){
           afterRemove: function(value) {
             removeElement(TabOutput,value)
           }
+<<<<<<< HEAD
    })});*/
+=======
+
+    })*/
+>>>>>>> 07650f706c79689b4b0d8728945c93a9fa2636de
