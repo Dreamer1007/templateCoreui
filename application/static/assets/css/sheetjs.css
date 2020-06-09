@@ -20,24 +20,21 @@ html {
 #left {
   width:188px;
   position:absolute;
-<<<<<<< HEAD
+
   top: 50px;
-=======
+
   top: 150px;
->>>>>>> 07650f706c79689b4b0d8728945c93a9fa2636de
   right: 150 px;
 }
 #right {
   position:absolute;
-<<<<<<< HEAD
+
   right: 100px;
   left: 420px;
   top: 120px;
-=======
   right: 0px;
   left: 300px;
   top: 150px;
->>>>>>> 07650f706c79689b4b0d8728945c93a9fa2636de
   padding: 0px;
 }
 
@@ -54,8 +51,6 @@ html {
 .success { color: #468847; }
 .error { color: #b94a48; }
 .info { color: #3a87ad; }
-<<<<<<< HEAD
 .pre { white-space: pre-wrap; }
-=======
 .pre { white-space: pre-wrap; }
->>>>>>> 07650f706c79689b4b0d8728945c93a9fa2636de
+
