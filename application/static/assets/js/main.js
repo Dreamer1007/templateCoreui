@@ -49,8 +49,6 @@ var cdg = canvasDatagrid({
 });
 cdg.style.height = '85%';
 cdg.style.width = '80%';
-cdg.style.height = '100%';
-cdg.style.width = '100%';
 
 function _resize() {
   _grid.style.height = (window.innerHeight - 200) + "px";
@@ -129,6 +127,6 @@ $(document).ready( function(){
           afterRemove: function(value) {
             removeElement(TabOutput,value)
           }
+         
    })});
-
 
