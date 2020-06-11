@@ -11,14 +11,6 @@ from werkzeug.utils  import secure_filename
 def index():
     return render_template("index.html")
 
-@app.route("/home")
-def home():
-    return render_template('home.html')
-
-<<<<<<< HEAD
-
-=======
->>>>>>> a57564ddcc47810a98f0f0337889f8cc9084e03f
 
 @app.route("/about")
 def about():
