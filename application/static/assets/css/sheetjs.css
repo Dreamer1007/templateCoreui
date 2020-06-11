@@ -40,6 +40,11 @@ html {
   display: none;
 }
 
+#parsed_csv_list{
+  max-height: 600px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
 .winpt { width:98%; }
 .success { color: #468847; }
 .error { color: #b94a48; }
