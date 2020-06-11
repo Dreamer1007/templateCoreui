@@ -69,6 +69,15 @@ def logout():
 def blank():
     return render_template('blank.html')
 
+@app.route("/menu.html")
+def menu():
+    return render_template('menu.html')
+
+@app.route("/model.html")
+def model():
+    return render_template('model.html')
+
+
 @app.route("/account")
 @login_required
 def account():
