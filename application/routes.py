@@ -7,7 +7,7 @@ from werkzeug.utils  import secure_filename
 
 
 @app.route("/")
-@app.route("/index.html")
+@app.route("/index")
 def index():
     return render_template("index.html")
 
@@ -19,12 +19,12 @@ def home():
 def NewModal():
     return render_template("newModal.html")
 
-@app.route("/about.html")
+@app.route("/about")
 def about():
     return render_template("about.html")
 
 
-@app.route("/register.html", methods=['GET', 'POST'])
+@app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('blank'))
@@ -69,7 +69,7 @@ def logout():
 def blank():
     return render_template('blank.html')
 
-@app.route("/menu.html")
+@app.route("/menu")
 def menu():
     return render_template('menu.html')
 
