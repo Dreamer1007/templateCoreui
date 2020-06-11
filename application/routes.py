@@ -15,9 +15,7 @@ def index():
 def home():
     return render_template('home.html')
 
-@app.route("/NewModal")
-def NewModal():
-    return render_template("newModal.html")
+
 
 @app.route("/about")
 def about():
