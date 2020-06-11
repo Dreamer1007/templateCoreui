@@ -55,7 +55,7 @@ def login():
     return render_template('login.html', title='Login', form=form)
 
 
-@app.route("/preview.html")
+@app.route("/preview")
 def preview():
     return render_template('preview.html')
 
@@ -65,7 +65,7 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-@app.route("/blank.html")
+@app.route("/blank")
 def blank():
     return render_template('blank.html')
 
@@ -73,7 +73,7 @@ def blank():
 def menu():
     return render_template('menu.html')
 
-@app.route("/model.html")
+@app.route("/model")
 def model():
     return render_template('model.html')
 
