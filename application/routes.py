@@ -1,9 +1,11 @@
-from flask import render_template, url_for, flash, redirect, request
-from application import app, db, bcrypt
+from flask import render_template, url_for, flash, redirect, request, jsonify, send_from_directory
+from application import app, db, bcrypt, uploads_dir
 from application.forms import RegistrationForm, LoginForm
 from application.models import User
 from flask_login import login_user, current_user, logout_user, login_required
 from werkzeug.utils  import secure_filename
+from application.clustering import Clustering
+import os, csv, json
 
 
 @app.route("/")
@@ -66,13 +68,38 @@ def blank():
 def menu():
     return render_template('menu.html')
 
-@app.route("/model")
-def model():
-    return render_template('model.html')
-
-
 @app.route("/account")
 @login_required
 def account():
     return render_template('account.html', title='Account')
 
+@app.route("/test", methods=['GET', 'POST'])
+def test():
+    test = Clustering.show_test()
+    return jsonify({"test":test})
+
+@app.route("/model")
+def model():
+    return render_template('model.html')
+
+
+@app.route('/receivedata', methods=['POST', 'GET'])
+def receive_data():
+    content = request.get_json()
+    test = Clustering.show_test(content)
+    return jsonify({"test":test})
+
+'''@app.route('/uploadd', methods=['POST'])
+def upload():
+    if request.method == 'POST':
+        # save the single "profile" file
+        profile = request.files['profile']
+        profile.save(os.path.join(uploads_dir, secure_filename(profile.filename)))
+                
+    return render_template('uploadd.html')'''
+
+
+
+'''@app.route('/uploadd')
+def upload_file():
+   return render_template('uploadd.html')'''
