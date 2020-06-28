@@ -1,8 +1,4 @@
-"""	
-Created on Tue Feb 11 22:45:21 2020	
-@author: Mahedi MAHALAL	
-inspired from https://github.com/mahesh147/KMeans-Clustering	
-"""	
+
 # K-Means Clustering
 
 # Importing the libraries
@@ -11,7 +7,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
-
 #Importing the mall dataset with pandas.
 
 class Clustering():
@@ -25,6 +20,8 @@ class Clustering():
         self.dataset = pd.read_csv(self.filename)
         self.X = self.dataset.iloc[:,[self.n,self.m]].values
 
+    def show_test(a):
+        return "just a test object"+a[0]+","+a[1]
     #def  return_x(self):
         ######## return concerned columns of the dataset ########
        #return self.X
@@ -74,8 +71,3 @@ class Clustering():
         plt.show()
         return
 
-# a try :
-
-dataset = Clustering('pima-indians-diabetes.data.csv', 3, 4)
-dataset.print_elbow(11)
-dataset.print_kmeans(5)
