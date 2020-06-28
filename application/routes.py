@@ -13,12 +13,7 @@ def index():
 
 @app.route("/home")
 def home():
-    return render_template('home.html')
-
-<<<<<<< HEAD
-
-=======
->>>>>>> a57564ddcc47810a98f0f0337889f8cc9084e03f
+    return render_template("home.html")
 
 @app.route("/about")
 def about():
@@ -84,13 +79,4 @@ def model():
 def account():
     return render_template('account.html', title='Account')
 
-
-
-@app.route('/CreateModal', methods = ['GET', 'POST'])
-def CreateModal():
-   if request.method == 'POST':
-      f = request.files['file']
-      f.save(secure_filename(f.filename))
-      return request.form.get('input')
-      return request.form.get('output')
 

@@ -10,7 +10,7 @@ function uploadFile(){
 
   $('#file').parse({
     config: {
-      delimiter: ";",
+      delimiter: "," | ".",
       complete: displayHTMLTable,
     }
 });
