@@ -13,12 +13,9 @@ import os, csv, json
 def index():
     return render_template("index.html")
 
-<<<<<<< HEAD
 @app.route("/home")
 def home():
     return render_template("home.html")
-=======
->>>>>>> aeac38630d72be0b55c5b9e341a117091c1e6744
 
 @app.route("/about")
 def about():
@@ -95,20 +92,17 @@ def receive_data():
     test = Clustering.show_test(content)
     return jsonify({"test":test})
 
-'''@app.route('/uploadd', methods=['POST'])
+@app.route('/uploadd', methods=['POST'])
 def upload():
     if request.method == 'POST':
         # save the single "profile" file
         profile = request.files['profile']
         profile.save(os.path.join(uploads_dir, secure_filename(profile.filename)))
                 
-    return render_template('uploadd.html')'''
+    return render_template('uploadd.html')
 
-<<<<<<< HEAD
-=======
 
 
 '''@app.route('/uploadd')
 def upload_file():
    return render_template('uploadd.html')'''
->>>>>>> aeac38630d72be0b55c5b9e341a117091c1e6744

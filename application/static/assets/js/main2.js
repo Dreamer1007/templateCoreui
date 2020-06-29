@@ -1,20 +1,10 @@
     var TabData = []
 
-
     function uploadFile() {
-
 
       var form = document.getElementById("CreateModelForm")
       var formdata = new FormData(form)
 
-<<<<<<< HEAD
-  $('#file').parse({
-    config: {
-      delimiter: "," | ".",
-      complete: displayHTMLTable,
-    }
-});
-=======
       $('#file').parse({
         config: {
           delimiter: ";",
@@ -22,8 +12,7 @@
         }
       });
       }
->>>>>>> aeac38630d72be0b55c5b9e341a117091c1e6744
-
+      //schema du tableau with checkbox
     function displayHTMLTable(results) {
 
       var table = "<table class='table'>";
@@ -67,9 +56,6 @@
     },
   });
 */
-
-
-
 
     $('#file').on('change', function () {
       var fileName = $(this).val();
