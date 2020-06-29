@@ -106,3 +106,12 @@ def upload():
 '''@app.route('/uploadd')
 def upload_file():
    return render_template('uploadd.html')'''
+
+
+@app.route('/CreateModal', methods = ['GET', 'POST'])
+def CreateModal():
+   if request.method == 'POST':
+        if ( request.files['file'] ):   
+            f = request.files['file']
+            f.save(secure_filename(f.filename))
+            return "succes"

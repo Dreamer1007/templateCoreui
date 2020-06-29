@@ -5,6 +5,18 @@
       var form = document.getElementById("CreateModelForm")
       var formdata = new FormData(form)
 
+      $.ajax({
+        type: 'POST',
+        url: '/CreateModal',
+        data: formdata,
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function(data) {
+            console.log(data);
+        },
+      });
+
       $('#file').parse({
         config: {
           delimiter: ";",
@@ -42,21 +54,6 @@
       $("#parsed_csv_list").html(table);
     }
 
-
-
-    /*  $.ajax({
-    type: 'POST',
-    url: '/CreateModal',
-    data: formdata,
-    contentType: false,
-    cache: false,
-    processData: false,
-    success: function(data) {
-        console.log(data);
-    },
-  });
-*/
-
     $('#file').on('change', function () {
       var fileName = $(this).val();
       $(this).next('.custom-file-label').html(fileName);
@@ -75,6 +72,7 @@
 
 
     }
+    
     $(document).ready(function () {
       $("#SendData").click(function () {
         $.ajax({
