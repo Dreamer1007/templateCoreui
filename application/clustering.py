@@ -20,8 +20,6 @@ class Clustering():
         self.dataset = pd.read_csv(self.filename)
         self.X = self.dataset.iloc[:,[self.n,self.m]].values
 
-    def show_test(a):
-        return "just a test object"+a[0]+","+a[1]
     
     #def  return_x(self):
         ######## return concerned columns of the dataset ########

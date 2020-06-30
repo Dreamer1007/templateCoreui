@@ -86,35 +86,22 @@ def model():
     return render_template('model.html')
 
 
-@app.route('/receivedata', methods=['POST', 'GET'])
-def receive_data():
-    content = request.get_json()
-    test = Clustering.show_test(content)
-    return jsonify({"test":test})
-
-@app.route('/uploadd', methods=['POST'])
-def upload():
-    if request.method == 'POST':
-        # save the single "profile" file
-        profile = request.files['profile']
-        profile.save(os.path.join(uploads_dir, secure_filename(profile.filename)))
-                
-    return render_template('uploadd.html')
-
-
-<<<<<<< HEAD
-=======
-
-'''@app.route('/uploadd')
-def upload_file():
-   return render_template('uploadd.html')'''
-
-
 @app.route('/CreateModal', methods = ['GET', 'POST'])
 def CreateModal():
    if request.method == 'POST':
         if ( request.files['file'] ):   
             f = request.files['file']
             f.save(secure_filename(f.filename))
-            return "succes"
->>>>>>> 66d5fb7cb9bf6e5f807942a47c68c5979f7e84a2
+            start = request.form['start']
+            end = request.form['end']
+            algo = Clustering(f.filename,int(start),int(end))
+
+            return "succes"+start + " "+end
+
+
+@app.route('/receivedata', methods=['POST', 'GET'])
+def receive_data():
+    content = request.get_json()
+    algo = Clustering(f.filename,content[0],content[1])
+    test = algo.show_test(content)
+    return jsonify({"test":test})

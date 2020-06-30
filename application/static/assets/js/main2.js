@@ -5,26 +5,35 @@
       var form = document.getElementById("CreateModelForm")
       var formdata = new FormData(form)
 
-      $.ajax({
-        type: 'POST',
-        url: '/CreateModal',
-        data: formdata,
-        contentType: false,
-        cache: false,
-        processData: false,
-        success: function(data) {
-            console.log(data);
-        },
-      });
+
 
       $('#file').parse({
         config: {
-          delimiter: ";",
+          delimiter: ",",
           complete: displayHTMLTable,
         }
       });
-      }
-      //schema du tableau with checkbox
+
+      $("#SendData").click(function () {
+        formdata.append('start', TabData[0]);
+        console.log(formdata.get('start'));
+        formdata.append('end', TabData[1]);
+        console.log(formdata.get('end'));
+        $.ajax({
+          type: 'POST',
+          url: '/CreateModal',
+          data: formdata,
+          contentType: false,
+          cache: false,
+          processData: false,
+          success: function (data) {
+            console.log(data);
+          },
+        });
+      });
+
+    }
+    //schema du tableau with checkbox
     function displayHTMLTable(results) {
 
       var table = "<table class='table'>";
@@ -53,10 +62,6 @@
       table += "</table>";
       $("#parsed_csv_list").html(table);
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 66d5fb7cb9bf6e5f807942a47c68c5979f7e84a2
     $('#file').on('change', function () {
       var fileName = $(this).val();
       $(this).next('.custom-file-label').html(fileName);
@@ -75,8 +80,8 @@
 
 
     }
-    
-    $(document).ready(function () {
+
+    /* $(document).ready(function () {
       $("#SendData").click(function () {
         $.ajax({
           type: 'POST',
@@ -88,7 +93,7 @@
           },
         });
       });
-    });
+    }); */
 
 
     function SendData() {
