@@ -22,6 +22,7 @@ class Clustering():
 
     def show_test(a):
         return "just a test object"+a[0]+","+a[1]
+    
     #def  return_x(self):
         ######## return concerned columns of the dataset ########
        #return self.X

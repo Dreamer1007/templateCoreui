@@ -41,22 +41,6 @@
       table += "</table>";
       $("#parsed_csv_list").html(table);
     }
-
-
-
-    /*  $.ajax({
-    type: 'POST',
-    url: '/CreateModal',
-    data: formdata,
-    contentType: false,
-    cache: false,
-    processData: false,
-    success: function(data) {
-        console.log(data);
-    },
-  });
-*/
-
     $('#file').on('change', function () {
       var fileName = $(this).val();
       $(this).next('.custom-file-label').html(fileName);

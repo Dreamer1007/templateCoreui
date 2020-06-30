@@ -102,7 +102,3 @@ def upload():
     return render_template('uploadd.html')
 
 
-
-'''@app.route('/uploadd')
-def upload_file():
-   return render_template('uploadd.html')'''
