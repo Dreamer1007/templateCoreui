@@ -95,7 +95,8 @@ def CreateModal():
             start = request.form['start']
             end = request.form['end']
             algo = Clustering(f.filename,int(start),int(end))
-
+            algo.print_elbow(11)
+            algo.print_kmeans(2)
             return "succes"+start + " "+end
 
 
